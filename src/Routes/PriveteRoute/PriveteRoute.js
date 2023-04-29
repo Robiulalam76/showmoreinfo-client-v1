@@ -18,10 +18,12 @@ const PriveteRoute = ({ children }) => {
         </div>
     }
 
-    if (userData?._id) {
+    if (userData) {
         return children
     }
-    return <Navigate to='/login' state={{ from: location }} replace ></Navigate>
+    else {
+        return <Navigate to='/login' state={{ from: location }} replace ></Navigate>
+    }
 };
 
 export default PriveteRoute;

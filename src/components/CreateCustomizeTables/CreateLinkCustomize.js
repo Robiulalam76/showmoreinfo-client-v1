@@ -222,17 +222,11 @@ const CreateLinkCustomize = ({ url }) => {
             </div>
 
             <div className="flex justify-between items-center">
-              {/* <a target="_blank" href={url?.link} className="flex items-center w-full gap-2"> */}
-              <a target="_blank" href={url?.link} className="flex items-center gap-2">
-                {/* <a target="_blank" href={url?.link}>
-                  <img className="w-6" src={linkClick} alt="" />
-                </a> */}
-                <input onChange={(e) => linkURLChange(e.target.value)}
-                  className={`mr-3 px-2 h-6 bg-white rounded w-full text-sm focus:outline-none text-blue-600 
+              <input onChange={(e) => linkURLChange(e.target.value)}
+                className={`mr-3 px-2 h-6 bg-white rounded w-full text-sm focus:outline-none text-blue-600 
                   ${openInputChange2 === url?._id ? "border border-blue-600" : "border-none cursor-pointer"}`}
-                  type="text" disabled={openInputChange2 === url?._id ? false : true}
-                  defaultValue={url?.link} name="linkURL" />
-              </a>
+                type="text" disabled={openInputChange2 === url?._id ? false : true}
+                defaultValue={url?.link} name="linkURL" />
 
               {
                 linkURL?.id === url?._id && linkURL.linkURL ?
