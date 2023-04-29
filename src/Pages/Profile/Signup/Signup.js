@@ -12,7 +12,7 @@ const Signup = () => {
   const { register, handleSubmit, formState: { errors }, } = useForm();
   const navigate = useNavigate()
   const location = useLocation()
-  const from = location.state?.from?.pathname || '/dashboard'
+  const from = location.state?.from?.pathname || '/'
 
   const [isLoasding, setIsLoading] = useState(false)
   const { setUserData } = useContext(AuthContext)
@@ -34,18 +34,11 @@ const Signup = () => {
     setIsLoading(true)
     axios.post(`http://localhost:8000/app/v1/user/signup`, data)
       .then((res) => {
-        if (res?.data?.data?.token) {
-          localStorage.setItem("HeyLinkToken", res?.data?.data?.token);
-          refetchNav(res?.data?.data?.token)
-          setIsLoading(false)
-
-          setTimeout(() => {
-            const getToken = localStorage.getItem("HeyLinkToken");
-            getToken && toast.success('User Login Successfully')
-
-            getToken && navigate(from, { replace: true });
-
-          }, 1000)
+        localStorage.setItem("HeyLinkToken", res?.data?.data?.token);
+        toast.success('User Signup Successfully')
+        console.log(res.data.data.token);
+        if (localStorage.getItem('HeyLinkToken')) {
+          navigate('/');
         }
       });
   };

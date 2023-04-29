@@ -13,23 +13,10 @@ const Login = () => {
   const token = localStorage.getItem("HeyLinkToken");
   const navigate = useNavigate()
   const location = useLocation()
-  const from = location.state?.from?.pathname || '/dashboard'
 
   const [isLoasding, setIsLoading] = useState(false)
-  const { setUserData } = useContext(AuthContext)
 
   const { register, handleSubmit, formState: { errors }, } = useForm();
-
-  const refetchNav = (token) => {
-    fetch(`http://localhost:8000/app/v1/user/me`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setUserData(data?.data));
-  }
 
   const handleLogin = (data) => {
     setIsLoading(true)
@@ -40,19 +27,18 @@ const Login = () => {
       },
     })
       .then((res) => {
-        if (res?.data?.data?.token) {
-          localStorage.setItem("HeyLinkToken", res?.data?.data?.token);
-          refetchNav(res?.data?.data?.token)
-          setIsLoading(false)
+        console.log(res.data.data.token);
+        localStorage.setItem("HeyLinkToken", res?.data?.data?.token);
+        setIsLoading(false)
 
-          setTimeout(() => {
-            const getToken = localStorage.getItem("HeyLinkToken");
-            getToken && toast.success('User Login Successfully')
+        setTimeout(() => {
+          const getToken = localStorage.getItem("HeyLinkToken");
+          console.log('getToken ', getToken)
+          getToken && toast.success('User Login Successfully')
 
-            getToken && navigate(from, { replace: true });
+          getToken && navigate('/');
 
-          }, 1000)
-        }
+        }, 1000)
       });
   };
   return (
