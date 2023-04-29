@@ -1,0 +1,73 @@
+/*
+
+
+ {/* ---------------Gallery tab data--------------- */}
+                {galleryData.length > 0 && (
+                  <div className="grid grid-cols-1 gap-4 w-full">
+                    {galleryData.map((item, index) => (
+                      //   console.log("item number: " + index + bufferToImage(item))
+                      <img
+                        key={index}
+                        className="rounded-2xl w-full"
+                        src={`data:image/png;base64, ${bufferToImage(item)}`}
+                        alt=""
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* ---------------Music tab data--------------- */}
+                {musicData.length > 0 && (
+                  <div className="grid grid-cols-1 gap-4 w-full">
+                    {musicData.map((music, index) => <>
+                      {
+                        music?.show === 'true' && <div
+                          className="w-full h-16 p-2 flex justify-between items-center gap-2 border border-white bg-rose-500">
+                          <div className="flex justify-start items-center gap-2 h-full max-w-full">
+                            <img className='w-16 h-full' src="https://st.depositphotos.com/1010338/2099/i/450/depositphotos_20999947-Tropical-island-with-palms..jpg" alt="" />
+                            <p className="text-white font-semibold">{music?.title ? music.title : music.link}</p>
+                          </div>
+                          <img className="w-8" src={arrowRight} alt="" />
+                        </div>
+                      }
+                    </>
+
+                    )}
+                  </div>
+                )}
+
+
+{
+                  menuData.length > 0 && (
+                    <div className="w-full grid grid-cols-1 gap-4">
+                      {
+                        menuData.map((menu, i) => <>
+                          {
+                            menu?.show === 'true' && <div className="w-full min-h-12 bg-purple-300 border-white border">
+                              <div onClick={() => setOpenMenuData(!openMenuData)}
+                                className="w-full h-12 flex justify-start items-center px-3">
+                                <h1 className="w-full">{menu?.name.slice(0, 40)}</h1>
+                              </div>
+                              {
+                                openMenuData && <>
+                                  {
+                                    menu?.item?.map((itemData, i) => (
+                                      <div className="w-full min-h-16 flex flex-col justify-start items-start gap-3 bg-white px-3 py-2">
+                                        <h1>{itemData?.itemText}</h1>
+                                        <h1 className="text-black font-semibold">{itemData?.ItemPrice} {menu?.currency}</h1>
+                                      </div>
+                                    ))
+                                  }
+                                </>
+                              }
+                            </div>
+                          }
+                        </>)
+                      }
+                    </div>
+                  )
+                }
+
+
+
+*/
