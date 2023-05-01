@@ -67,7 +67,7 @@ const Navber = () => {
                 <div className='flex justify-between items-center gap-3 md:gap-12 text-[18px]'>
                     {
                         userData?._id && <Link to='/dashboard'>
-                            <h1 className='hidden lg:block hover:text-sky-500 duration-300'>Dashboard</h1>
+                            <h1 className='hover:text-sky-500 duration-300'>Dashboard</h1>
                         </Link>
                     }
 
@@ -78,11 +78,6 @@ const Navber = () => {
                         }
                     </div> */}
 
-                    {
-                        userData?._id && <Link to='/dashboard' className='text-center hover:text-rose-500 font-semibold'>
-                            Dashboard
-                        </Link>
-                    }
 
                     {
                         userData?._id && <div className='relative'>
