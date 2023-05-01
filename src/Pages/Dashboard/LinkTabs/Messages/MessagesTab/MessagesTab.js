@@ -20,7 +20,7 @@ const MessagesTab = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:8000/app/v1/message`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/message`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
                 "content-type": "application/json",
@@ -35,7 +35,7 @@ const MessagesTab = () => {
             handleDefaultSwitch(messageData?._id, { turnOnOffMessage: input }, 'message',)
         }
         else if (!messageData) {
-            fetch(`http://localhost:8000/app/v1/message`, {
+            fetch(`https://3twn4n.xn--b5bp.com/app/v1/message`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,

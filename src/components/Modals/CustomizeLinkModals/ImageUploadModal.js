@@ -34,7 +34,7 @@ const ImageUploadModal = ({ closeModal, endPoint }) => {
 
   const imageUpload = (imageURL) => {
     console.log(imageURL, endPoint);
-    const url = `http://localhost:8000/app/v1/${endPoint}`;
+    const url = `https://3twn4n.xn--b5bp.com/app/v1/${endPoint}`;
     fetch(url, {
       method: "PATCH",
       headers: {

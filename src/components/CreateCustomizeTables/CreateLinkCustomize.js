@@ -57,7 +57,7 @@ const CreateLinkCustomize = ({ url }) => {
 
   // link name update--------------
   const handleUpdateLinkName = () => {
-    fetch(`http://localhost:8000/app/v1/links/common/${url?._id}`, {
+    fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/common/${url?._id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -79,7 +79,7 @@ const CreateLinkCustomize = ({ url }) => {
 
   // link url update--------------
   const handleUpdateLinkURL = () => {
-    fetch(`http://localhost:8000/app/v1/links/common/${url?._id}`, {
+    fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/common/${url?._id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -114,7 +114,7 @@ const CreateLinkCustomize = ({ url }) => {
 
   // const handleActiveFrom = (date) => {
   //   const startDate = new Date(date);
-  //   fetch(`http://localhost:8000/app/v1/links/common/${url?._id}`, {
+  //   fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/common/${url?._id}`, {
   //     method: "PATCH",
   //     headers: {
   //       Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -135,7 +135,7 @@ const CreateLinkCustomize = ({ url }) => {
 
   // const handleActiveUntile = (date) => {
   //   const endDate = new Date(date);
-  //   fetch(`http://localhost:8000/app/v1/links/common/${url?._id}`, {
+  //   fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/common/${url?._id}`, {
   //     method: "PATCH",
   //     headers: {
   //       Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -154,7 +154,7 @@ const CreateLinkCustomize = ({ url }) => {
   // }
 
   // const handleMoveUpdate = (input) => {
-  //   fetch(`http://localhost:8000/app/v1/links/common/${url?._id}`, {
+  //   fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/common/${url?._id}`, {
   //     method: 'PATCH',
   //     headers: {
   //       Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -177,15 +177,15 @@ const CreateLinkCustomize = ({ url }) => {
         <img className="w-5" src={swap} alt="" />
       </div>
       <div className="relative border border-gray-200 rounded-[60px] w-full bg-white">
-        <div className="h-20 flex justify-between items-center gap-6 py-4 px-4">
+        <div className="h-20 flex justify-between items-center gap-2 py-4 px-2">
 
 
           {/* -----------image upload input field end----------- */}
           <div onClick={() => dispatch(setUploadImageModal(url?._id))}
-            class="relative w-14 h-14 flex justify-center items-center mx-auto bg-gray-200 rounded-full overflow-hidden"
+            class="relative min-w-[56px] h-14 flex justify-center items-center mx-auto bg-gray-200 rounded-full overflow-hidden"
           >
             <img
-              className="w-14 h-14 cursor-pointer"
+              className="min-w-[56px] h-14 object-cover cursor-pointer"
               src={`${url?.image ? url?.image : emptyImage}`}
               alt=""
             />

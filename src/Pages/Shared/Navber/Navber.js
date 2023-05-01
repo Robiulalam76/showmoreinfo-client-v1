@@ -79,8 +79,14 @@ const Navber = () => {
                     </div> */}
 
                     {
+                        userData?._id && <Link to='/dashboard' className='text-center hover:text-rose-500 font-semibold'>
+                            Dashboard
+                        </Link>
+                    }
+
+                    {
                         userData?._id && <div className='relative'>
-                            <img onClick={() => setViewProfile(!viewProfile)} className='rounded-full w-12 h-12'
+                            <img onClick={() => setViewProfile(!viewProfile)} className='rounded-full w-10 h-10'
                                 src={`${userData?.image ? userData?.image : avatar}`} alt="" />
                             {
                                 viewProfile && <ProfileDropdown setViewProfile={setViewProfile} />
@@ -106,7 +112,7 @@ const Navber = () => {
                     }
 
                     {/* -----------toggler button----------- */}
-                    <div onClick={() => setOpen(!open)} className="w-10 lg:hidden text-white">
+                    {/* <div onClick={() => setOpen(!open)} className="w-10 lg:hidden text-white">
                         {
                             open ? <span>
                                 <svg className='w-8 mr-4 ' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" ariaHidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd"></path></svg>
@@ -116,18 +122,18 @@ const Navber = () => {
                                     <svg className='w-6 ml-2 ' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
                                 </span>
                         }
-                    </div>
+                    </div> */}
                     {/* -----------toggler button end----------- */}
                 </div>
             </section>
 
             {/* -----------show only small devices after the toggler button clicked----------- */}
-            <div className='md:hidden flex justify-between items-center py-2 px-6 mt-3 bg-[#2a2b8b]'>
-                {/* <Link to='/templates'><h1 className='hover:text-sky-500 text-white duration-300'>Free Templates</h1></Link>
-                <Link to='/pricing'><h1 className='hover:text-sky-500 text-white duration-300'>Pricing</h1></Link> */}
+            {/* <div className='md:hidden flex justify-between items-center py-2 px-6 mt-3 bg-[#2a2b8b]'>
+                <Link to='/templates'><h1 className='hover:text-sky-500 text-white duration-300'>Free Templates</h1></Link>
+                <Link to='/pricing'><h1 className='hover:text-sky-500 text-white duration-300'>Pricing</h1></Link>
                 <Link to='/login'><h1 className='hover:text-sky-500 text-white duration-300'>Login</h1></Link>
-            </div>
-            <hr className='border-gray-400 mt-6 md:hidden' />
+            </div> */}
+            {/* <hr className='border-gray-400 mt-6 md:hidden' />
             {
                 open && <div onClick={() => setOpen(false)} className={`bg-[#393AA7] min-h-screen flex flex-col gap-4 items-center py-6`}>
                     {
@@ -135,7 +141,7 @@ const Navber = () => {
                             <h1>Dashboard</h1>
                         </Link>
                     }
-                    {/* <Link to='/templates' className='border-2 border-white hover:border-sky-500 hover:text-sky-500 px-6 py-2 rounded-[50px] text-center w-44 font-semibold'>
+                    <Link to='/templates' className='border-2 border-white hover:border-sky-500 hover:text-sky-500 px-6 py-2 rounded-[50px] text-center w-44 font-semibold'>
                         <h1>Free Templates</h1>
                     </Link>
                     <Link to='/blog-and-help' className='border-2 border-white hover:border-sky-500 hover:text-sky-500 px-6 py-2 rounded-[50px] text-center w-44 font-semibold'>
@@ -149,9 +155,9 @@ const Navber = () => {
                     </Link>
                     <Link to='/agency' className='border-2 border-white hover:border-sky-500 hover:text-sky-500 px-6 py-2 rounded-[50px] text-center w-44 font-semibold'>
                         <h1>Agency</h1>
-                    </Link> */}
+                    </Link>
                 </div>
-            }
+            } */}
         </nav>
     );
 };

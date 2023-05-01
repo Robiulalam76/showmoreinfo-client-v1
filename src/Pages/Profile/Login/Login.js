@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleLogin = (data) => {
     setIsLoading(true)
-    axios.post(`http://localhost:8000/app/v1/user/login`, data, {
+    axios.post(`https://3twn4n.xn--b5bp.com/app/v1/user/login`, data, {
       headers: {
         Authorization: token,
         "content-type": "application/json",

@@ -48,7 +48,7 @@ const LocationsCustomize = ({ location }) => {
     }
 
     const handleUpdateMarkerOnTheMapAddress = () => {
-        fetch(`http://localhost:8000/app/v1/links/location/${location?._id}`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/location/${location?._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -69,7 +69,7 @@ const LocationsCustomize = ({ location }) => {
     }
 
     const handleUpdateLocation = () => {
-        fetch(`http://localhost:8000/app/v1/links/location/${location?._id}`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/location/${location?._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,

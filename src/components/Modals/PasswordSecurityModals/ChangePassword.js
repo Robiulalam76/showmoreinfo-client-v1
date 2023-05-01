@@ -27,7 +27,7 @@ const ChangePassword = ({ closeModal }) => {
                 newPassword: data?.newPassword,
             }
             setSendLoading(true)
-            fetch(`http://localhost:8000/app/v1/user/change-password`, {
+            fetch(`https://3twn4n.xn--b5bp.com/app/v1/user/change-password`, {
                 method: "PATCH",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,

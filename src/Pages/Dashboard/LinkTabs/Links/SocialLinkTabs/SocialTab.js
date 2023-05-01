@@ -63,7 +63,7 @@ const SocialTab = () => {
       userInfo: userData?._id,
     };
 
-    fetch(`http://localhost:8000/app/v1/links/social`, {
+    fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/social`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -155,7 +155,7 @@ const SocialTab = () => {
             />
           </div>
 
-          {inputError && selectedSocial !== "Select Popular Social Link" ? (
+          {inputError && selectedSocial !== "Social Link" ? (
             <button className=" flex justify-center items-center gap-1 px-4 rounded-[50px] h-12 mx-auto w-full bg-blue-600 hover:bg-blue-700 duration-150">
               <h1 className="text-white font-semibold">+ Add</h1>
               <h1 className="text-white font-semibold">

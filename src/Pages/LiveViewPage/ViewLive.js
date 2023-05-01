@@ -15,7 +15,7 @@ const ViewLive = () => {
 
     useEffect(() => {
         const name = location.pathname.slice(1, location?.pathname?.length)
-        fetch(`http://localhost:8000/${name}`)
+        fetch(`https://3twn4n.xn--b5bp.com/${name}`)
             .then((res) => res.json())
             .then((data) => {
                 setData(data.data)
@@ -24,7 +24,7 @@ const ViewLive = () => {
 
     const refetch = () => {
         const name = location.pathname.slice(1, location?.pathname?.length)
-        fetch(`http://localhost:8000/${name}`)
+        fetch(`https://3twn4n.xn--b5bp.com/${name}`)
             .then((res) => res.json())
             .then((data) => {
                 setData(data.data)

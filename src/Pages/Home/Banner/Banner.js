@@ -7,7 +7,7 @@ import img1 from "../../../assets/images/home-images/img1.png"
 const Banner = () => {
 
   return (
-    <section className="bg-[#393AA7] min-h-screen">
+    <section className="bg-[#393AA7] h-full">
       <Navber />
 
       <div

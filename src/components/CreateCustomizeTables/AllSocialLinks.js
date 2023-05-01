@@ -4,6 +4,12 @@ import upArrow from "../../assets/icons/link-customize-icons/up-arrow.svg";
 import swap from "../../assets/icons/link-customize-icons/swap.svg";
 import edit from "../../assets/icons/link-customize-icons/edit.svg";
 import blueRight from '../../assets/icons/blue-right.png'
+
+import facebook from '../../assets/icons/socials/facebook.png'
+import twitter from '../../assets/icons/socials/twitter.png'
+import linkedin from '../../assets/icons/socials/linkedin.png'
+import youtube from '../../assets/icons/socials/youtube.png'
+
 import deletes from "../../assets/icons/link-customize-icons/delete.svg";
 import DeleteModal from "../Modals/CommonModals/DeleteModal";
 import { toast } from "react-hot-toast";
@@ -17,11 +23,11 @@ const AllSocialLinks = ({ socialLink }) => {
   const { open, deleteModal, openInputChange1 } = useSelector((state) => state.controllerSlice)
   const dispatch = useDispatch()
 
-  // console.log(socialLink);
+  console.log(socialLink);
 
   // handle update social link name
   const handleUpdateSocialLinkName = () => {
-    fetch(`http://localhost:8000/app/v1/links/social/${socialLink?._id}`, {
+    fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/social/${socialLink?._id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -48,7 +54,7 @@ const AllSocialLinks = ({ socialLink }) => {
   }
 
   const handleButtonORIcon = (input) => {
-    fetch(`http://localhost:8000/app/v1/links/social/${socialLink?._id}`, {
+    fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/social/${socialLink?._id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -67,24 +73,24 @@ const AllSocialLinks = ({ socialLink }) => {
 
   return (
     <div>
-      <div className="relative my-6 flex items-center gap-4 w-full cursor-pointer">
+      <div className="relative my-6 flex items-center gap-2 w-full cursor-pointer">
         <div>
           <img className="w-5" src={swap} alt="" />
         </div>
-        <div className="h-20 border border-gray-200 rounded-[70px] flex justify-between items-center gap-4 md:gap-6 py-4 px-2 md:px-6 w-full bg-white">
+        <div className="h-20 border border-gray-200 rounded-[70px] flex justify-between items-center gap-2 md:gap-6 py-4 px-2 md:px-6 w-full bg-white">
 
 
           <div className="w-full flex flex-row justify-between gap-2 items-center">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <img
                 className="w-10 h-10 rounded-full object-cover"
-                src={socialLink?.image}
+                src={socialLink?.name === "Facebook" && facebook || socialLink?.name === "Twitter" && twitter || socialLink?.name === "Linkedin" && linkedin || socialLink?.name === "Youtube" && youtube}
                 alt=""
               />
-              <h1 className="flex items-center gap-1">
+              <div className="flex items-center gap-1 text-sm">
                 <span className="text-gray-300">My</span>
                 <span className="text-gray-300">{socialLink?.name}</span>
-              </h1>
+              </div>
             </div>
 
             <div className="flex-grow flex flex-col gap-2">

@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
         if (!userData?._id) {
             setLoading(true)
             if (token) {
-                fetch(`http://localhost:8000/app/v1/user/me`, {
+                fetch(`https://3twn4n.xn--b5bp.com/app/v1/user/me`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
                         "content-type": "application/json",

@@ -17,7 +17,7 @@ const MenuItems = ({ menuId, item }) => {
 
     // handle update item name
     const handleUpdateItemName = () => {
-        fetch(`http://localhost:8000/app/v1/links/menu/${menuId}`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/menu/${menuId}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,
@@ -36,7 +36,7 @@ const MenuItems = ({ menuId, item }) => {
 
     // handle update item price
     const handleUpdateItemPrice = () => {
-        fetch(`http://localhost:8000/app/v1/links/menu/${menuId}`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/links/menu/${menuId}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("HeyLinkToken")}`,

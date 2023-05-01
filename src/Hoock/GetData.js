@@ -6,7 +6,7 @@ const useGetData = (endpoint) => {
     const token = localStorage.getItem("HeyLinkToken")
 
     useEffect(() => {
-        fetch(`http://localhost:8000/app/v1/${endpoint}`, {
+        fetch(`https://3twn4n.xn--b5bp.com/app/v1/${endpoint}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "content-type": "application/json",
